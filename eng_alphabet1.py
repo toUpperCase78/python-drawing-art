@@ -1,0 +1,462 @@
+# ENGLISH ALPHABET 1 - STYLISH
+# REFERENCE: https://tr.pinterest.com/pin/714665034664836691/
+import numpy as np
+import cv2
+WIDTH = 600
+HEIGHT = 650
+SIZE = 10
+
+def line_vertical(x, y, s=1):
+    cv2.line(img, (x, y), (x, y + SIZE * s), (0, 0, 0), 2)
+
+def line_horizontal(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y), (0, 0, 0), 2)
+
+def line_back_diagonal(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y + SIZE * s), (0, 0, 0), 2)
+
+def line_back_diagonal_two_by_one(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y + SIZE * s * 2), (0, 0, 0), 2)
+
+def line_back_diagonal_three_by_one(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y + SIZE * s * 3), (0, 0, 0), 2)
+
+def line_back_diagonal_five_by_one(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y + SIZE * s * 5), (0, 0, 0), 2)
+
+def line_back_diagonal_five_by_two(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s * 2, y + SIZE * s * 5), (0, 0, 0), 2)
+
+def line_forward_diagonal(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y - SIZE * s), (0, 0, 0), 2)
+
+def line_forward_diagonal_one_by_three(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s * 3, y - SIZE * s), (0, 0, 0), 2)
+
+def line_forward_diagonal_two_by_one(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y - SIZE * s * 2), (0, 0, 0), 2)
+
+def line_forward_diagonal_three_by_one(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s, y - SIZE * s * 3), (0, 0, 0), 2)
+
+def line_forward_diagonal_five_by_two(x, y, s=1):
+    cv2.line(img, (x, y), (x + SIZE * s * 2, y - SIZE * s * 5), (0, 0, 0), 2)
+
+img = np.uint8(np.zeros((HEIGHT, WIDTH, 3)))
+img[:,:,:] = 230
+
+for i in range(0, HEIGHT, SIZE):
+    cv2.line(img, (0, i), (WIDTH, i), (200, 200, 200), 1)
+for i in range(0, WIDTH, SIZE):
+    cv2.line(img, (i, 0), (i, HEIGHT), (200, 200, 200), 1)
+
+# Letter A
+line_vertical(20, 80, 3)
+line_forward_diagonal(20, 80)
+line_back_diagonal(20, 110)
+line_forward_diagonal(10, 120)
+line_vertical(30, 70, 5)
+line_horizontal(30, 70, 2)
+line_horizontal(30, 120, 2)
+line_back_diagonal(50, 70)
+line_forward_diagonal(50, 120)
+line_vertical(60, 70, 4)
+line_horizontal(60, 70)
+line_back_diagonal(60, 110)
+line_vertical(70, 70, 5)
+line_horizontal(70, 120)
+line_forward_diagonal(80, 120)
+
+# Letter B
+line_vertical(110, 30, 9)
+line_horizontal(110, 30)
+line_horizontal(100, 60)
+line_horizontal(110, 120)
+line_vertical(120, 30, 9)
+line_back_diagonal(120, 30)
+line_vertical(130, 40)
+line_forward_diagonal(120, 60)
+line_forward_diagonal(120, 80)
+line_back_diagonal(120, 110)
+line_horizontal(130, 70, 2)
+line_horizontal(130, 120, 4)
+line_vertical(150, 70, 5)
+line_back_diagonal(150, 70)
+line_forward_diagonal(150, 120)
+line_vertical(160, 80, 3)
+line_forward_diagonal(170, 120)
+
+# Letter C
+line_vertical(200, 80, 3)
+line_forward_diagonal(200, 80)
+line_back_diagonal(200, 110)
+line_forward_diagonal(190, 120)
+line_vertical(210, 70, 5)
+line_horizontal(210, 70, 2)
+line_horizontal(210, 120, 2)
+line_back_diagonal(230, 70)
+line_forward_diagonal(230, 120, 2)
+
+# Letter D
+line_vertical(270, 80, 3)
+line_forward_diagonal(270, 80)
+line_back_diagonal(270, 110)
+line_forward_diagonal(260, 120)
+line_vertical(280, 70, 5)
+line_horizontal(280, 70, 2)
+line_horizontal(280, 120, 2)
+line_back_diagonal(300, 70)
+line_forward_diagonal(300, 120)
+line_vertical(310, 30, 8)
+line_horizontal(310, 30)
+line_vertical(320, 30, 9)
+line_back_diagonal(310, 110)
+line_horizontal(320, 120)
+line_forward_diagonal(330, 120)
+line_back_diagonal(320, 30)
+line_vertical(330, 40)
+line_forward_diagonal(320, 60)
+line_horizontal(300, 60)
+
+# Letter E
+line_vertical(360, 80, 3)
+line_forward_diagonal(360, 80)
+line_back_diagonal(360, 110)
+line_forward_diagonal(350, 120)
+line_vertical(370, 70, 5)
+line_horizontal(370, 70, 3)
+line_horizontal(370, 100, 3)
+line_horizontal(370, 120, 3)
+line_vertical(400, 70, 3)
+line_back_diagonal(400, 70)
+line_vertical(410, 80)
+line_forward_diagonal(400, 100)
+line_forward_diagonal(400, 120)
+
+# Letter F
+line_vertical(430, 30, 13)
+line_horizontal(430, 30)
+line_vertical(440, 30, 13)
+line_horizontal(430, 160)
+line_back_diagonal(440, 30)
+line_vertical(450, 40, 4)
+line_forward_diagonal(440, 90)
+line_forward_diagonal(420, 110)
+line_forward_diagonal(420, 120)
+line_vertical(420, 120, 3)
+line_back_diagonal(420, 150)
+line_forward_diagonal(440, 100, 2)
+
+# Letter G
+line_vertical(480, 80, 3)
+line_forward_diagonal(480, 80)
+line_back_diagonal(480, 110)
+line_vertical(490, 70, 5)
+line_forward_diagonal(470, 120)
+line_horizontal(490, 70, 2)
+line_horizontal(490, 120, 2)
+line_back_diagonal(510, 70)
+line_forward_diagonal(510, 120)
+line_vertical(520, 70, 8)
+line_horizontal(520, 70)
+line_vertical(530, 70, 7)
+line_forward_diagonal(510, 160, 2)
+line_horizontal(500, 160)
+line_back_diagonal(490, 150)
+line_vertical(490, 140)
+line_forward_diagonal_one_by_three(490, 140)
+line_forward_diagonal(530, 130, 2)
+
+# Letter H
+line_vertical(20, 180, 9)
+line_horizontal(20, 180)
+line_vertical(30, 180, 9)
+line_horizontal(20, 270)
+line_forward_diagonal(30, 230)
+line_horizontal(40, 220, 2)
+line_back_diagonal(60, 220)
+line_vertical(60, 220, 4)
+line_vertical(70, 230, 4)
+line_back_diagonal(60, 260)
+line_horizontal(70, 270)
+line_forward_diagonal(80, 270)
+line_back_diagonal(30, 180)
+line_vertical(40, 190)
+line_forward_diagonal(30, 210)
+line_horizontal(10, 210)
+
+# Letter I
+line_vertical(100, 220, 4)
+line_horizontal(100, 220)
+line_vertical(110, 220, 5)
+line_back_diagonal(100, 260)
+line_horizontal(110, 270)
+line_forward_diagonal(120, 270)
+line_vertical(100, 200)
+line_horizontal(100, 200)
+line_vertical(110, 200)
+line_horizontal(100, 210)
+
+# Letter J
+line_vertical(170, 220, 8)
+line_horizontal(170, 220)
+line_vertical(180, 220, 7)
+line_forward_diagonal(160, 310, 2)
+line_horizontal(150, 310)
+line_back_diagonal(140, 300)
+line_vertical(140, 290)
+line_forward_diagonal_one_by_three(140, 290)
+line_forward_diagonal(180, 280, 2)
+line_forward_diagonal(160, 260)
+line_vertical(170, 200)
+line_horizontal(170, 200)
+line_vertical(180, 200)
+line_horizontal(170, 210)
+
+# Letter K
+line_vertical(220, 180, 9)
+line_horizontal(220, 180)
+line_vertical(230, 180, 9)
+line_horizontal(220, 270)
+line_forward_diagonal(230, 230)
+line_horizontal(240, 220)
+line_vertical(250, 220)
+line_forward_diagonal(240, 240)
+line_horizontal(230, 240)
+line_back_diagonal(240, 240)
+line_vertical(250, 250, 2)
+line_horizontal(250, 270)
+line_forward_diagonal(260, 270)
+line_back_diagonal(230, 180)
+line_vertical(240, 190)
+line_forward_diagonal(230, 210)
+line_horizontal(210, 210)
+line_forward_diagonal(210, 260)
+
+# Letter L
+line_vertical(290, 180, 8)
+line_horizontal(290, 180)
+line_vertical(300, 180, 9)
+line_back_diagonal(290, 260)
+line_forward_diagonal(280, 270)
+line_horizontal(300, 270)
+line_forward_diagonal(310, 270)
+line_back_diagonal(300, 180)
+line_vertical(310, 190, 5)
+line_forward_diagonal(300, 250)
+
+# Letter M
+line_vertical(340, 220, 5)
+line_horizontal(340, 220)
+line_vertical(350, 220, 5)
+line_horizontal(340, 270)
+line_forward_diagonal(330, 260)
+line_forward_diagonal(350, 230)
+line_horizontal(360, 220)
+line_back_diagonal(370, 220)
+line_vertical(370, 220, 3)
+line_horizontal(370, 250)
+line_vertical(380, 230, 2)
+line_forward_diagonal(380, 230)
+line_horizontal(390, 220)
+line_back_diagonal(400, 220)
+line_vertical(400, 220, 5)
+line_horizontal(400, 270)
+line_vertical(410, 230, 4)
+line_forward_diagonal(410, 270)
+
+# Letter N
+line_vertical(440, 220, 5)
+line_horizontal(440, 220)
+line_vertical(450, 220, 5)
+line_horizontal(440, 270)
+line_forward_diagonal(430, 260)
+line_forward_diagonal(450, 230)
+line_horizontal(460, 220, 2)
+line_back_diagonal(480, 220)
+line_vertical(480, 220, 5)
+line_horizontal(480, 270)
+line_vertical(490, 230, 4)
+line_forward_diagonal(490, 270)
+
+# Letter O
+line_vertical(20, 380, 3)
+line_forward_diagonal(20, 380)
+line_back_diagonal(20, 410)
+line_vertical(30, 370, 5)
+line_horizontal(30, 370, 3)
+line_horizontal(30, 420, 3)
+line_back_diagonal(60, 370)
+line_forward_diagonal(60, 420)
+line_vertical(70, 380, 3)
+line_vertical(50, 370, 2)
+line_back_diagonal(50, 390)
+line_horizontal(60, 400, 2)
+line_vertical(60, 370, 3)
+line_forward_diagonal(80, 400)
+
+# Letter P
+line_forward_diagonal(100, 420)
+line_vertical(110, 370, 9)
+line_horizontal(110, 370)
+line_vertical(120, 370, 8)
+line_forward_diagonal(110, 460)
+line_back_diagonal(100, 450)
+line_vertical(100, 440)
+line_forward_diagonal(100, 440)
+line_forward_diagonal(120, 380)
+line_back_diagonal(120, 410)
+line_horizontal(130, 370, 2)
+line_horizontal(130, 420, 4)
+line_back_diagonal(150, 370)
+line_forward_diagonal(150, 420)
+line_vertical(150, 370, 5)
+line_vertical(160, 380, 3)
+line_forward_diagonal(170, 420)
+
+# Letter Q
+line_vertical(190, 380, 3)
+line_forward_diagonal(190, 380)
+line_back_diagonal(190, 410)
+line_vertical(200, 370, 5)
+line_horizontal(200, 370, 2)
+line_horizontal(200, 420, 2)
+line_back_diagonal(220, 370)
+line_forward_diagonal(220, 420)
+line_vertical(230, 370, 8)
+line_horizontal(230, 370)
+line_vertical(240, 370, 9)
+line_back_diagonal(230, 450)
+line_forward_diagonal(240, 460)
+line_vertical(250, 440)
+line_back_diagonal(240, 430)
+line_forward_diagonal(240, 420)
+
+# Letter R
+line_horizontal(260, 420)
+line_forward_diagonal(270, 420)
+line_vertical(280, 350, 6)
+line_horizontal(260, 350, 2)
+line_vertical(260, 350)
+line_back_diagonal(260, 360)
+line_horizontal(270, 370, 3)
+line_vertical(270, 350, 2)
+line_back_diagonal(300, 370)
+line_vertical(300, 370, 4)
+line_vertical(310, 380, 4)
+line_back_diagonal(300, 410)
+line_horizontal(310, 420)
+line_forward_diagonal(320, 420)
+
+# Letter S
+line_forward_diagonal(340, 380)
+line_horizontal(350, 370, 2)
+line_back_diagonal(370, 370)
+line_back_diagonal(340, 380, 3)
+line_vertical(350, 370)
+line_vertical(370, 410)
+line_back_diagonal(350, 380, 3)
+line_forward_diagonal(370, 420, 2)
+line_horizontal(350, 420, 2)
+line_back_diagonal(340, 410)
+
+# Letter T
+line_horizontal(400, 370, 2)
+line_vertical(420, 330, 8)
+line_horizontal(420, 330)
+line_vertical(430, 330, 9)
+line_back_diagonal(420, 410)
+line_forward_diagonal(410, 420)
+line_horizontal(430, 370, 2)
+line_horizontal(430, 420, 2)
+line_forward_diagonal(450, 420)
+
+# Letter U
+line_vertical(480, 370, 4)
+line_horizontal(480, 370)
+line_vertical(490, 370, 5)
+line_back_diagonal(480, 410)
+line_forward_diagonal(470, 420)
+line_horizontal(490, 420, 2)
+line_forward_diagonal(510, 420)
+line_vertical(520, 370, 4)
+line_horizontal(520, 370)
+line_vertical(530, 370, 5)
+line_back_diagonal(520, 410)
+line_horizontal(530, 420)
+line_forward_diagonal(540, 420)
+
+# Letter V
+line_back_diagonal_five_by_one(20, 520)
+line_horizontal(20, 520)
+line_back_diagonal_five_by_one(30, 520)
+line_horizontal(30, 570)
+line_forward_diagonal(10, 530)
+line_forward_diagonal_five_by_two(40, 570)
+line_back_diagonal(50, 510)
+line_vertical(50, 510)
+line_back_diagonal(50, 520)
+line_horizontal(60, 530)
+
+# Letter W
+line_back_diagonal_five_by_one(90, 520)
+line_horizontal(90, 520)
+line_back_diagonal_five_by_one(100, 520)
+line_horizontal(100, 570)
+line_forward_diagonal(80, 530)
+line_forward_diagonal_three_by_one(110, 570)
+line_back_diagonal_three_by_one(120, 540)
+line_horizontal(120, 540)
+line_horizontal(130, 570)
+line_back_diagonal_three_by_one(130, 540)
+line_forward_diagonal_five_by_two(140, 570)
+line_back_diagonal(150, 510)
+line_vertical(150, 510)
+line_back_diagonal(150, 520)
+line_horizontal(160, 530)
+
+# Letter X
+line_forward_diagonal(180, 530)
+line_back_diagonal_five_by_two(190, 520)
+line_horizontal(190, 520)
+line_back_diagonal_five_by_two(200, 520)
+line_horizontal(210, 570, 2)
+line_forward_diagonal_two_by_one(210, 540)
+line_forward_diagonal_two_by_one(190, 570)
+line_forward_diagonal(230, 570)
+
+# Letter Y
+line_forward_diagonal(250, 570)
+line_vertical(260, 520, 4)
+line_horizontal(260, 520)
+line_vertical(270, 520, 5)
+line_back_diagonal(260, 560)
+line_horizontal(270, 570, 2)
+line_forward_diagonal(290, 570)
+line_vertical(300, 520, 8)
+line_horizontal(300, 520)
+line_vertical(310, 520, 7)
+line_forward_diagonal(290, 610, 2)
+line_horizontal(280, 610)
+line_back_diagonal(270, 600)
+line_vertical(270, 590)
+line_forward_diagonal_one_by_three(270, 590)
+line_forward_diagonal(310, 580, 2)
+
+# Letter Z
+line_forward_diagonal(340, 530)
+line_horizontal(350, 520, 3)
+line_vertical(380, 520)
+line_forward_diagonal(350, 560, 3)
+line_vertical(370, 520)
+line_forward_diagonal(340, 560, 3)
+line_vertical(340, 560)
+line_vertical(350, 560)
+line_horizontal(340, 570, 4)
+line_forward_diagonal(380, 570)
+
+cv2.imshow('English Alphabet 1 - Stylish', img)
+k = cv2.waitKey(0) & 0xFF
+if k == ord('s'):
+    cv2.imwrite('eng_alphabet1_output.jpg', img)
+cv2.destroyAllWindows()
